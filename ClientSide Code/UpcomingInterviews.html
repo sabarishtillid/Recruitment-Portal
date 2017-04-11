@@ -1,0 +1,149 @@
+<div id="UpcomingInterviews"></div>
+
+<script type="text/javascript">
+
+
+  
+ $(document).ready(function () {
+
+  UploadInterview();
+ 
+
+    });
+	
+ function UploadInterview() {
+     var UpcomingHtml = "";
+        var todaydate = new Date();
+        var todate = (todaydate.getMonth() + 1) + '/' + todaydate.getDate() + '/' + todaydate.getFullYear();
+	  $.ajax({
+	      url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('ScheduleInterview')/Items?$select=Interviewers/Id,Interviewers/Title,InterviewDate,CandidateName/Id,CandidateName/CandidateName&$expand=CandidateName,Interviewers&$filter=InterviewDate ge '" + todate + "'&$orderby=InterviewDate%20asc&$top=2",
+            type: "GET",
+            async: false,
+            headers: { "accept": "application/json;odata=verbose" },
+            success: function (data) {
+              
+
+                if (data.d.results) {
+				
+                  UpcomingHtml +='<div class="col-md-12 top-buffer imp_dates">';
+							 
+                  UpcomingHtml += '<h3>Upcoming Scheduled Interviews</h3>';
+                  UpcomingHtml += '<div class="inner_rit">                        ';
+							 
+                    for (var i = 0; i < data.d.results.length; i++) {
+							 
+							 
+                        var resultdummy = data.d.results[i].CandidateName.CandidateName;
+                        var resultdummy11 = data.d.results[i].InterviewDate;
+											
+						var valuesplit = resultdummy11.split('T')[0];
+					    var finalvalue = resultdummy11.split('-');
+						var datevalues = valuesplit.split('-')[2];
+						
+						var valuetimesplit=resultdummy11.split('T')[1];
+						var valuetimesplitvalue=valuetimesplit.split('Z')[0];
+					
+						
+						
+						
+						
+											
+						
+						var Upcomingdateresult = UpcomingDateCase(finalvalue[1]);
+																
+                        UpcomingHtml += '<ul class="impdat_val">';
+
+                       UpcomingHtml += '<li><span class="date_cont">                 ';
+					   UpcomingHtml += '<span>' + Upcomingdateresult + '</span>                   						';
+                       UpcomingHtml += '<span>' + datevalues + '</span>           ';
+					   UpcomingHtml += '<span>' + valuetimesplitvalue + '</span>           ';
+                       UpcomingHtml += '</span>                                      ';
+                       UpcomingHtml += '<span class="dat_ent">' + resultdummy + '</span></li> ';
+					   
+                       
+                    }
+
+
+
+
+
+
+
+
+                    var viewAllHtml = _spPageContextInfo.siteAbsoluteUrl + "/Pages//UpcomingInterviews.aspx";
+                  //  UpcomingHtml += '<li id="wpEventsViewAll"><span class="view_all"><a href="' + viewAllHtml + '">View All</a></span><div class="hovertext"></div></li>';
+                    UpcomingHtml += '<p><span class="view_all"><a href="' + viewAllHtml + '">View All</a></span><div class="hovertext"></div></p>';
+                    UpcomingHtml += ' </ul>';
+                
+                    UpcomingHtml += ' </div>';
+                    $('#UpcomingInterviews').html(UpcomingHtml);
+
+                    //var val = $(".dat_ent").html();
+                    //var leng = $(".dat_ent").html().length;
+                    //if (leng >= 60) {
+                    //    val = val.toString().substring(0, 57);
+                    //    var textdata = val + "...";
+                    //    $('.dat_ent').html(textdata);
+                    //}
+					//UpcomingHtml +='</div>';
+							 
+							
+                }
+            }
+        });
+    }
+	
+	 function UpcomingDateCase(UpcomingDateInput) {
+
+        var monthString;
+
+        switch (UpcomingDateInput) {
+
+            case '01':
+                monthString = "Jan";
+                break;
+            case '02':
+                monthString = "Feb";
+                break;
+            case '03':
+                monthString = "Mar";
+                break;
+            case '04':
+                monthString = "Apr";
+                break;
+            case '05':
+                monthString = "May";
+                break;
+            case '06':
+                monthString = "Jun";
+                break;
+            case '07':
+                monthString = "Jul";
+                break;
+            case '08':
+                monthString = "Aug";
+                break;
+            case '09':
+                monthString = "Sep";
+                break;
+            case '10':
+                monthString = "Oct";
+                break;
+            case '11':
+                monthString = "Nov";
+                break;
+            case '12':
+                monthString = "Dec";
+                break;
+            default:
+                monthString = "Invalid Month";
+                break;
+        }
+        return monthString;
+    }
+	 
+	</script>
+	
+	
+	
+	

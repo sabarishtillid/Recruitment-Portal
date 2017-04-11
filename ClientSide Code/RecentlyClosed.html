@@ -1,0 +1,99 @@
+<div id="RecentlyClosed"></div>
+
+<script type="text/javascript">
+
+
+  
+ $(document).ready(function () {
+   // alert("HI");
+  RecentlyClosedInterview();
+    });
+	
+	function RecentlyClosedInterview() {
+     var RecentHtml = "";
+        
+	  $.ajax({
+	      url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('ScheduleInterview')/Items?$select=Interviewers/Id,Interviewers/Title,InterviewDate,CandidateName/Id,CandidateName/CandidateName&$expand=CandidateName,Interviewers&$filter=Status eq 'Completed'&$top=3",
+            type: "GET",
+            async: false,
+            headers: { "accept": "application/json;odata=verbose" },
+            success: function (data) {
+               // alert(data);
+
+                if (data.d.results) {
+					
+					 RecentHtml +='<div class="col-md-12 top-buffer trdng_ides">';
+					 RecentHtml +='<h3>Recently Closed</h3>';
+					 RecentHtml += '<div class="inner_rit">';
+
+					 RecentHtml += '<ul class="Recent_heading">';
+					 RecentHtml += '<li>Candidate Name</li>';
+					 RecentHtml += '<li>Interview Date</li>';
+					 RecentHtml += '<li>Interviewer </li>';
+					 RecentHtml += '</ul>';
+							 
+                    for (var i = 0; i < data.d.results.length; i++) {
+							 
+							 
+                        var resultdummy = data.d.results[i].CandidateName.CandidateName;
+                        var resultdummy11 = data.d.results[i].Interviewers.Title;
+						var resultdummy12=data.d.results[i].InterviewDate;
+						
+						var valuesplit = resultdummy12.split('T')[0];
+						var valuetimesplit=resultdummy12.split('T')[1];
+						var valuetimesplitvalue=valuetimesplit.split('Z')[0];	
+							
+							
+						RecentHtml += '<ul class="Recent_Values">';
+						RecentHtml += '<li>'+resultdummy+'</li>';
+						RecentHtml += '<li>' + valuesplit + ' '+valuetimesplitvalue+'</li>';
+						RecentHtml += '<li>' + resultdummy11 + '</li>';
+						RecentHtml += '</ul>';
+
+							
+						
+                      
+                    }
+                    var viewAllHtml = _spPageContextInfo.siteAbsoluteUrl + "/Pages/RecentlyClosed.aspx";
+								
+										
+						RecentHtml +='			<p><span class="view_all"><a href="'+viewAllHtml+'">View All</a></span></p>';
+					
+						RecentHtml +='				</div>';
+						
+					
+						
+								
+					
+                    $('#RecentlyClosed').html(RecentHtml);                  
+					
+							 
+							
+                }
+				
+            }
+        });
+    }
+	</script>
+	
+	
+	
+	
+									
+									
+										
+											
+											
+											
+											
+											
+											
+											
+											
+											
+										
+									
+								
+								
+								
+							

@@ -1,0 +1,88 @@
+
+							
+<div id="ScheduledToday"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
+
+<script type="text/javascript">
+
+
+  
+ $(document).ready(function () {
+    //alert("HI");
+  ScheduledInterview();
+  
+ 
+
+    });
+	function ScheduledInterview() {
+     var UpcomingHtml = "";
+        var todaydate = new Date();
+        var todate = (todaydate.getMonth() + 1) + '/' + todaydate.getDate() + '/' + todaydate.getFullYear();
+		
+		
+		
+	  $.ajax({
+	      url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('ScheduleInterview')/Items?$select=Interviewers/Id,Interviewers/Title,InterviewDate,CandidateName/Id,CandidateName/CandidateName&$expand=CandidateName,Interviewers&$filter=InterviewDate eq '" + todate + "'&$top=1",
+		  
+            type: "GET",
+            async: false,
+            headers: { "accept": "application/json;odata=verbose" },
+            success: function (data) {
+               // alert(data);
+
+                if (data.d.results) {
+					
+					 UpcomingHtml +='<div class="col-md-12 top-buffer app_week">';
+					 UpcomingHtml +='<h3>Scheduled Today</h3>';
+                 
+							 
+                    for (var i = 0; i < data.d.results.length; i++) {
+							 
+                     
+                        var resultdummy = data.d.results[i].CandidateName.CandidateName;
+                        var resultdummy11 = data.d.results[i].Interviewers.title;
+						var resultdummy12=data.d.results[i].InterviewDate;
+						
+						
+							UpcomingHtml +='<div class="appweek_cont">';
+							UpcomingHtml += '<div class="appweekcell">';
+							//UpcomingHtml += '<ul><span class="trnd_lst">';
+							//UpcomingHtml += '<span class="rating">' + resultdummy + '</span>';
+							//UpcomingHtml += '</ul>';
+							//UpcomingHtml +='<h4>'+ resultdummy + '</h4>';
+                            //UpcomingHtml += '<p>' + resultdummy12 + '</p>';
+
+							UpcomingHtml += '<ul class="sch_today">';
+						
+							UpcomingHtml += '<li><span>Candidate Name</span>'+ resultdummy + '</li>';
+							UpcomingHtml += '<li><span>Interview Date</span>' + resultdummy12 + '</li>';
+							UpcomingHtml += '<li><span>Interviewer</span>' + resultdummy11 + '</li>';
+							UpcomingHtml += '</ul>';
+
+
+							//UpcomingHtml +='<ul><span class="trnd_lst">';
+							//UpcomingHtml +='<span class="ratings">'+resultdummy11+'</span>';
+							//UpcomingHtml += '</ul>';
+							UpcomingHtml += '</div>';
+							UpcomingHtml += '</div>';
+                      
+                    }
+                    var viewAllHtml = _spPageContextInfo.siteAbsoluteUrl + "/Pages/ScheduledInterviewstoday.aspx";
+													
+						UpcomingHtml += '<p><span class="view_all"><a href="' + viewAllHtml + '">View All</a></span></p>';
+						UpcomingHtml += '</div>';
+						
+								
+					
+                    $('#ScheduledToday').html(UpcomingHtml);                  
+					
+							 
+							
+                }
+            }
+        });
+    }
+	</script>
+	

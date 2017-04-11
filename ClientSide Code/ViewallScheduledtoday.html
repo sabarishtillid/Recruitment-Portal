@@ -1,0 +1,72 @@
+<div class="inner_cont">
+<h4>SCHEDULED TODAY</h4>
+							<div class="table-responsive">          
+								
+								<table class="table lats_submsn">
+									<thead>
+										<tr>
+											<th>CandidateName</th>
+											<th>Interviewer</th>
+											<th>InterviewDate</th>
+										</tr>
+									</thead>
+									<tbody id="latestsubtbody">
+		                          </tbody>
+								</table>
+							</div>
+							</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //alert('hi');
+        UploadTable();
+
+    });
+    function UploadTable() {
+        var CanHtml = "";
+        var todaydate = new Date();
+       // var todate = (todaydate.getMonth() + 1) + '/' + todaydate.getDate() + '/' + todaydate.getFullYear();
+		var todate=todaydate.getFullYear()		+ '/' + (todaydate.getMonth()+1) + '/' + todaydate.getDate();
+        $.ajax({
+            url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('ScheduleInterview')/Items?$select=Interviewers/Id,Interviewers/Title,InterviewDate,CandidateName/Id,CandidateName/CandidateName&$expand=CandidateName,Interviewers&$filter=InterviewDate eq '" + todate + "'",
+            type: "GET",
+            headers: { "accept": "application/json;odata=verbose" },
+            success: function (data) {
+              
+
+                if (data.d.results) {
+
+
+                    for (var i = 0; i < data.d.results.length; i++) {
+                        var resultdummy = data.d.results[i].CandidateName.CandidateName;
+                        var resultdummy2 = data.d.results[i].Interviewers.Title;
+                        var resultdummy11 = data.d.results[i].InterviewDate;
+
+                        CanHtml += '<tr class="latestsubtr">';
+                        CanHtml += '<td>' + data.d.results[i].CandidateName.CandidateName + '</td>';
+                        CanHtml += '<td>' + data.d.results[i].Interviewers.Title + '</td>';
+                        CanHtml += '<td>' + data.d.results[i].InterviewDate + '</td>';
+                        CanHtml += '</tr>';
+                    }
+
+
+
+
+
+                    $('#latestsubtbody').html(CanHtml);
+                }
+            },
+            error: function (xhr) {
+                alert(xhr.status + ': ' + xhr.statusText);
+            }
+        });
+
+    }
+</script>
+
+
+
+

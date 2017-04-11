@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="d8105e0a-2d35-49bd-99a7-a551d9cb9f1b" solutionId="d8105e0a-2d35-49bd-99a7-a551d9cb9f1b" resetWebServer="false" sharePointProductVersion="15.0" name="Recruitment_Portal_Pages" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="f1dd4d2f-b095-464b-be34-e6ccd7d910b5" />
+  </features>
+</package>

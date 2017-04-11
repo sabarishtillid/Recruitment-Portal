@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="fab78bfb-081b-4444-add6-84ae8d1496f3" Scope="Web" Title="Recruitment_Portal_Pages Feature1">
+  <ElementManifests>
+    <ElementManifest Location="PageLayouts\Elements.xml" />
+    <ElementFile Location="PageLayouts\ReruitmentPortalMasterPage.html" />
+  </ElementManifests>
+</Feature>

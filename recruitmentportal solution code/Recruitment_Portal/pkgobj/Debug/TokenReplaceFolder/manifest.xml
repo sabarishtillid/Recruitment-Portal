@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="5b2165da-a14b-444b-8c0f-0a7ee79ed54c" SharePointProductVersion="15.0">
+  <Assemblies>
+    <Assembly Location="Recruitment_Portal.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="Recruitment_Portal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a59906287b16315e" Namespace="Recruitment_Portal.CandidatesList" TypeName="*" />
+        <SafeControl Assembly="Recruitment_Portal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a59906287b16315e" Namespace="Detailscandiates.DetailsCandiates" TypeName="*" />
+        <SafeControl Assembly="Recruitment_Portal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a59906287b16315e" Namespace="Recruitment_Portal.ScheduleInterview" TypeName="*" />
+        <SafeControl Assembly="Recruitment_Portal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a59906287b16315e" Namespace="recruitmentportal.InterviewerForm" TypeName="*" />
+        <SafeControl Assembly="Recruitment_Portal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a59906287b16315e" Namespace="Recruitment_Portal.QuickLaunchNavigation" TypeName="*" />
+        <SafeControl Assembly="Recruitment_Portal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a59906287b16315e" Namespace="Recruitment_Portal.Vacancies" TypeName="*" />
+        <SafeControl Assembly="Recruitment_Portal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a59906287b16315e" Namespace="Recruitment_Portal.ScheduleInterviewDetails" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <TemplateFiles>
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\Calibri.eot" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\Calibri.ttf" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\Calibri.woff" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\fontawesome-webfont.eot" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\fontawesome-webfont.ttf" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\fontawesome-webfont.woff" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\fontawesome-webfont.woff2" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\FontAwesome.otf" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\glyphicons-halflings-regular.eot" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\glyphicons-halflings-regular.ttf" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\glyphicons-halflings-regular.woff" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\glyphicons-halflings-regular.woff2" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\css\bootstrap.min.css" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\css\font-awesome.min.css" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\css\style - Copy.css" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\css\style.css" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\Calibri.svg" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\fontawesome-webfont.svg" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\fonts\glyphicons-halflings-regular.svg" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\application.jpg" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\favicon.ico" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\fb.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\goal_max_img.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\hrcolor.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\like.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\liked.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\logo - Copy.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\logo.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\menubrwn.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\menu_gear.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\placeholder.jpg" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\placeholder.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\rating.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\screenshot.jpg" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\images\share.png" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\js\bootstrap.min.js" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\js\jquery-1.12.0.min.js" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\js\jquery.slimscroll.js" />
+    <TemplateFile Location="Layouts\Recruitment_Portal\js\script.js" />
+  </TemplateFiles>
+  <FeatureManifests>
+    <FeatureManifest Location="Recruitment_Portal_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>

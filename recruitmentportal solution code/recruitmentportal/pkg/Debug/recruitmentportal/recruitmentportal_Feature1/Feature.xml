@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="19a96301-7d9b-4e1d-b2b6-e4ed92397d9d" Scope="Site" Title="recruitmentportal Feature1">
+  <ElementManifests>
+    <ElementManifest Location="Submit\Elements.xml" />
+    <ElementFile Location="Submit\Submit.webpart" />
+    <ElementManifest Location="InterviewerForm\Elements.xml" />
+    <ElementFile Location="InterviewerForm\InterviewerForm.webpart" />
+    <ElementManifest Location="DetailsCandiates\Elements.xml" />
+    <ElementFile Location="DetailsCandiates\DetailsCandiates.webpart" />
+  </ElementManifests>
+</Feature>

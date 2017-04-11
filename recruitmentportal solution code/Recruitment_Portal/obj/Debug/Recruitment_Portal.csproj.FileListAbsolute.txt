@@ -1,0 +1,9 @@
+C:\Users\devadmin\Documents\Visual Studio 2012\Projects\recruitmentportal\Recruitment_Portal\bin\Debug\Recruitment_Portal.dll
+C:\Users\devadmin\Documents\Visual Studio 2012\Projects\recruitmentportal\Recruitment_Portal\bin\Debug\Recruitment_Portal.pdb
+C:\Users\devadmin\Documents\Visual Studio 2012\Projects\recruitmentportal\Recruitment_Portal\obj\Debug\Recruitment_Portal.dll
+C:\Users\devadmin\Documents\Visual Studio 2012\Projects\recruitmentportal\Recruitment_Portal\obj\Debug\Recruitment_Portal.pdb
+C:\Users\sabarishbabu\Documents\Visual Studio 2012\Projects\recruitmentportal\Recruitment_Portal\bin\Debug\Recruitment_Portal.dll
+C:\Users\sabarishbabu\Documents\Visual Studio 2012\Projects\recruitmentportal\Recruitment_Portal\bin\Debug\Recruitment_Portal.pdb
+C:\Users\sabarishbabu\Documents\Visual Studio 2012\Projects\recruitmentportal\Recruitment_Portal\obj\Debug\Recruitment_Portal.dll
+C:\Users\sabarishbabu\Documents\Visual Studio 2012\Projects\recruitmentportal\Recruitment_Portal\obj\Debug\Recruitment_Portal.pdb
+C:\Users\sabarishbabu\Documents\Visual Studio 2012\Projects\recruitmentportal\Recruitment_Portal\obj\Debug\Recruitment_Portal.csprojResolveAssemblyReference.cache

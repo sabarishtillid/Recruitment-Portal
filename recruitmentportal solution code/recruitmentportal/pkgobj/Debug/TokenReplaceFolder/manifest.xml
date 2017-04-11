@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="044dd78a-21ff-4afd-a5d0-1e5f8d4ea605" SharePointProductVersion="15.0">
+  <Assemblies>
+    <Assembly Location="recruitmentportal.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="recruitmentportal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f367e0a4e6ab9287" Namespace="recruitmentportal.Submit" TypeName="*" />
+        <SafeControl Assembly="recruitmentportal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f367e0a4e6ab9287" Namespace="recruitmentportal.InterviewerForm" TypeName="*" />
+        <SafeControl Assembly="recruitmentportal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f367e0a4e6ab9287" Namespace="Detailscandiates.DetailsCandiates" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="recruitmentportal_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>

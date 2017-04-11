@@ -1,0 +1,1 @@
+bin\Debug\Recruitment_Portal_Pages.wsp

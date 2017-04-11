@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="622606b5-d0ae-49a4-9c51-46134678fcd1" Scope="Site" Title="Recruitment_Portal Feature1">
+  <ElementManifests>
+    <ElementManifest Location="CandidatesList\Elements.xml" />
+    <ElementFile Location="CandidatesList\CandidatesList.webpart" />
+    <ElementManifest Location="DetailsCandiates\Elements.xml" />
+    <ElementFile Location="DetailsCandiates\DetailsCandiates.webpart" />
+    <ElementManifest Location="ScheduleInterview\Elements.xml" />
+    <ElementFile Location="ScheduleInterview\ScheduleInterview.webpart" />
+    <ElementManifest Location="InterviewerForm\Elements.xml" />
+    <ElementFile Location="InterviewerForm\InterviewerForm.webpart" />
+    <ElementManifest Location="QuickLaunchNavigation\Elements.xml" />
+    <ElementFile Location="QuickLaunchNavigation\QuickLaunchNavigation.webpart" />
+    <ElementManifest Location="Vacancies\Elements.xml" />
+    <ElementFile Location="Vacancies\Vacancies.webpart" />
+    <ElementManifest Location="ScheduleInterviewDetails\Elements.xml" />
+    <ElementFile Location="ScheduleInterviewDetails\ScheduleInterviewDetails.webpart" />
+  </ElementManifests>
+</Feature>
